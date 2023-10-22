@@ -1,0 +1,168 @@
+<!-- Nama : Dave Nathanael Anthonius -->
+<!-- NIM  : 121140025                -->
+<!-- Kelas: RC                       -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Playpen+Sans:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="detail.css" />
+</head>
+<body>
+    <input type="checkbox" id="check">
+    <label for="check">
+        <i id="tombol"></i>
+        <i id="cancel"></i>
+    </label>
+    <div class="sidebar">
+        <header><img class="header" src="musik.jpg" title="Musik"></header>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="form.html">REGISTRATION</a></li>
+            <li><a href="detail.html">DATA</a></li>
+        </ul>
+    </div>
+    <div class="containt">
+        <nav class="pembungkus">
+            <img class="logo" src="musik.jpg" title="Musik" />
+            <div class="brand">
+                <div class="firstname">Music</div>
+                <div class="lastname">Theory</div>
+            </div>
+        </nav>
+    </div>
+    <section>
+        <table id="data-table">
+            <thead>
+                <tr>
+                    <th>NAME</th>
+                    <th>NIM</th>
+                    <th>STUDY PROGRAM</th>
+                    <th>EMAIL</th>
+                    <th>DATE OF BIRTH</th>
+                    <th>ADDRESS</th>
+                    <th>GENDER</th>
+                    <th>PASSWORD</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Rozan</td>
+                    <td>987654321</td>
+                    <td>Informatika</td>
+                    <td>rozan@example.com</td>
+                    <td>1 Januari 2000</td>
+                    <td>Jl. Kebagusan</td>
+                    <td>MAN</td>
+                    <td>rozan123</td>
+                </tr>
+                <tr>
+                    <td>Zaky</td>
+                    <td>789654321</td>
+                    <td>Sipil</td>
+                    <td>zaky@example.com</td>
+                    <td>2 Februari 2001</td>
+                    <td>Jl. Way Huwi</td>
+                    <td>MAN</td>
+                    <td>zaky123</td>
+                </tr>
+                <tr>
+                    <td>Dave</td>
+                    <td>321654987</td>
+                    <td>Teknik Kimia</td>
+                    <td>dave@example.com</td>
+                    <td>3 Maret 2002</td>
+                    <td>Jl. Mawar</td>
+                    <td>MAN</td>
+                    <td>dave123</td>
+                </tr>
+                <tr>
+                    <td>Razzan</td>
+                    <td>789456321</td>
+                    <td>Teknik Biomedis</td>
+                    <td>razzan@example.com</td>
+                    <td>4 April 2003</td>
+                    <td>Jl. Merdeka</td>
+                    <td>MAN</td>
+                    <td>razzan123</td>
+                </tr>
+                <tr>
+                    <td>Marshanda</td>
+                    <td>654987321</td>
+                    <td>Teknik Telekomunikasi</td>
+                    <td>marshanda@example.com</td>
+                    <td>5 Mei 2004</td>
+                    <td>Jl. Kandis</td>
+                    <td>WOMAN</td>
+                    <td>marshanda123</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const tableBody = document.getElementById("data-table").querySelector("tbody");
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const name = urlParams.get("name");
+            const nim = urlParams.get("nim");
+            const studyprogram = urlParams.get("studyprogram");
+            const email = urlParams.get("email");
+            const dateofbirth = urlParams.get("dateofbirth");
+            const address = urlParams.get("address");
+            const gender = urlParams.get("gender");
+            const password = urlParams.get("password");
+
+            if (name && nim) {
+                const newRow = document.createElement("tr");
+                const nameCell = document.createElement("td");
+                nameCell.textContent = name;
+                newRow.appendChild(nameCell);
+
+                const nimCell = document.createElement("td");
+                nimCell.textContent = nim;
+                newRow.appendChild(nimCell);
+
+                const studyprogramCell = document.createElement("td");
+                studyprogramCell.textContent = studyprogram;
+                newRow.appendChild(studyprogramCell);
+
+                const emailCell = document.createElement("td");
+                emailCell.textContent = email;
+                newRow.appendChild(emailCell);
+
+                const dateofbirthCell = document.createElement("td");
+                dateofbirthCell.textContent = dateofbirth;
+                newRow.appendChild(dateofbirthCell);
+
+                const addressCell = document.createElement("td");
+                addressCell.textContent = address;
+                newRow.appendChild(addressCell);
+
+                const genderCell = document.createElement("td");
+                genderCell.textContent = gender;
+                newRow.appendChild(genderCell);
+
+                const passwordCell = document.createElement("td");
+                passwordCell.textContent = password;
+                newRow.appendChild(passwordCell);
+
+                tableBody.appendChild(newRow);
+            }
+        });
+    </script>
+
+<footer>
+  <div class="pembungkus2" >
+      <p>Let's come and join us!</p>
+      <p>&copy; 2023 Dave Nathanael Anthonius. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>

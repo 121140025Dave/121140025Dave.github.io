@@ -1,0 +1,95 @@
+<!-- Nama : Dave Nathanael Anthonius -->
+<!-- NIM  : 121140025                -->
+<!-- Kelas: RC                       -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Playpen+Sans:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="form.css" />
+</head>
+<body>
+    <input type="checkbox" id="check">
+    <label for="check">
+        <i id="tombol"></i>
+        <i id="cancel"></i>
+    </label>
+    <div class="sidebar">
+        <header><img class="header" src="musik.jpg" title="Musik"></header>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="form.html">REGISTRATION</a></li>
+            <li><a href="detail.html">DATA</a></li>
+        </ul>
+    </div>
+    <div class="containt">
+        <nav class="pembungkus">
+            <img class="logo" src="musik.jpg" title="Musik" />
+            <div class="brand">
+                <div class="firstname">Music</div>
+                <div class="lastname">Theory</div>
+            </div>
+        </nav>
+    </div>
+    <div class="Registration">
+        <h1>Registration</h1>
+        <form id="myForm" action="detail.html" method="post">
+            <label for="name">NAME</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="nim">NIM</label>
+            <input type="number" id="nim" name="nim" required>
+
+            <label for="studyprogram">STUDY PROGRAM</label>
+            <input type="text" id="studyprogram" name="studyprogram" required>
+
+            <label for="email">EMAIL</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="dateofbirth">DATE OF BIRTH</label>
+            <input type="date" id="dateofbirth" name="dateofbirth" required>
+
+            <label for="address">ADDRESS</label>
+            <textarea id="address" name="address" required></textarea>
+
+            <label for="gender">GENDER</label>
+            <select id="gender" name="gender" required>
+                <option value="MAN">MAN</option>
+                <option value="WOMAN">WOMAN</option>
+            </select>
+
+            <label for="password">PASSWORD</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit" class="add-button">ADD</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("myForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            const name = formData.get("name");
+            const nim = formData.get("nim");
+            const studyprogram = formData.get("studyprogram");
+            const email = formData.get("email");
+            const dateofbirth = formData.get("dateofbirth");
+            const address = formData.get("address");
+            const gender = formData.get("gender");
+            const password = formData.get("password");
+            window.location.href = `detail.html?name=${name}&nim=${nim}&studyprogram=${studyprogram}&email=${email}&dateofbirth=${dateofbirth}&address=${address}&gender=${gender}&password=${password}`;
+        });
+    </script>
+
+<footer>
+  <div class="pembungkus2" >
+    <p>&copy; 2023 Dave Nathanael Anthonius. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>
